@@ -1,4 +1,5 @@
 # ⚽ PL Match Predictor using scikit-learn
+## 📊 how it works
 A Premier League Match Predictor that utilizes machine learning (Random Forest Classifier) to predict match results based on past performance and match conditions.
 - Prepares Data: Converts categorical features (venue, opponent, match time, etc.) into numerical values.
 - Trains Model: Uses a Random Forest Classifier on matches before 2022-01-01.
