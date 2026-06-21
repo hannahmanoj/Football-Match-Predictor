@@ -7,7 +7,6 @@ from pathlib import Path
 
 os.environ.setdefault("LOKY_MAX_CPU_COUNT", "8")
 
-import joblib
 import numpy as np
 import pandas as pd
 
@@ -106,6 +105,8 @@ def _team_row(teams: pd.DataFrame, team: str) -> pd.Series:
 
 @lru_cache(maxsize=1)
 def _load_model_artifact() -> dict:
+    import joblib
+
     return joblib.load(MODEL_PATH)
 
 
