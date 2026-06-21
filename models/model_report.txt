@@ -1,0 +1,45 @@
+International Match Result Model
+Selected model: HistGradientBoosting
+Training rows: 27,719
+Test rows: 4,596
+Test start date: 2022-01-01
+Accuracy: 0.602
+Log loss: 0.876
+Brier score: 0.515
+Ranked probability score: 0.172
+Expected calibration error: 1.172%
+
+Top feature importances:
+                  feature importance_mean importance_std
+                 elo_diff         0.29800        0.00991
+             elo_abs_diff         0.03731        0.00466
+    tournament_importance         0.00190        0.00070
+            win_rate_diff         0.00185        0.00064
+             defense_diff         0.00159        0.00045
+    goal_diff_recent_diff         0.00109        0.00061
+         combined_defense         0.00078        0.00044
+goal_diff_recent_abs_diff         0.00075        0.00072
+         defense_abs_diff         0.00072        0.00026
+       away_attack_rating         0.00059        0.00037
+    away_draw_rate_recent         0.00048        0.00053
+           draw_rate_diff         0.00027        0.00012
+     away_win_rate_recent         0.00026        0.00027
+    home_draw_rate_recent         0.00024        0.00027
+          attack_abs_diff         0.00022        0.00050
+
+Model comparison:
+                       model accuracy log_loss brier_score   rps    ece draw_precision draw_recall
+        HistGradientBoosting    0.602    0.876       0.515 0.172 1.172%          0.333       0.009
+                RandomForest    0.577    0.894       0.528 0.175 2.050%          0.295       0.214
+          LogisticRegression    0.560    0.902       0.532 0.176 1.952%          0.285       0.294
+BalancedHistGradientBoosting    0.557    0.902       0.534 0.177 2.342%          0.282       0.292
+
+              precision    recall  f1-score   support
+
+    away_win       0.58      0.62      0.60      1341
+        draw       0.33      0.01      0.02      1057
+    home_win       0.61      0.88      0.72      2198
+
+    accuracy                           0.60      4596
+   macro avg       0.51      0.50      0.45      4596
+weighted avg       0.54      0.60      0.52      4596
