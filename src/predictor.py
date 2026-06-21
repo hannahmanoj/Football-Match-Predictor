@@ -295,5 +295,8 @@ def _predict_with_model(teams: pd.DataFrame, team_a: str, team_b: str) -> MatchP
 
 def predict_match(teams: pd.DataFrame, team_a: str, team_b: str) -> MatchPrediction:
     if MODEL_PATH.exists():
-        return _predict_with_model(teams, team_a, team_b)
+        try:
+            return _predict_with_model(teams, team_a, team_b)
+        except (ImportError, ModuleNotFoundError, AttributeError, ValueError):
+            return _fallback_prediction(teams, team_a, team_b)
     return _fallback_prediction(teams, team_a, team_b)
